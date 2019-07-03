@@ -1,6 +1,6 @@
 # The Seeker - Boid Seeks Mouse
 
-Mouse seeking behavious modeled using location, velocity and acceleration. 
+Mouse seeking behavious modeled using location, velocity, acceleration, and perception.
 
 Built as a code Kata with an intent to learn the [openFrameworks C++ creative coding toolkit](https://openframeworks.cc/).
 

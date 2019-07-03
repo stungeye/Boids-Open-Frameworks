@@ -32,3 +32,7 @@ A C++ program written in the `setup/update/draw` [openFrameworks style](https://
 I'm using the word "Boid" here loosely. A [fully-fledged Boid](https://en.wikipedia.org/wiki/Boids) exhibits flocking behaviours in groups according to the Rules of Reynolds. 
 
 This is app includes a seeker Boid inspired by the [Autonomous Agents / Steering Behaviour Chapter](https://natureofcode.com/book/chapter-6-autonomous-agents/) in [Daniel Shiffman's book The Nature of Code](https://natureofcode.com). 
+
+## Executable Build for x64 Windows Machines
+
+The [bin folder](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/bin) includes a release build executable for x64 Windows 10.

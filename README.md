@@ -8,7 +8,7 @@ Built as a code Kata with an intent to learn the [openFrameworks C++ creative co
 
 ## Source Code
 
-A C++ program written in the `setup/update/draw` [openFrameworks](https://openframeworks.cc/) style:
+A C++ program written in the `setup/update/draw` [openFrameworks style](https://openframeworks.cc/ofBook/chapters/how_of_works.html):
 
 * [ofApp.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/ofApp.cpp) - The app setup along with its update/draw loop.
 * [ofApp.h](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/ofApp.h) - Two variables for the main app: `Boid theBoid` and `Mouser theMouse`

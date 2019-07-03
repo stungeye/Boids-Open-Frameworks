@@ -15,12 +15,12 @@ A C++ program written in the standard `setup/update/draw` [openFrameworks](https
 
 ### The Boid Source
 
-* boid.cpp - Seeking behaviour and the code to draw the seeker a circle with line nose: O- 
+* boid.cpp - Seeking behaviour and the code to draw the seeker as a circle with line nose: O- 
 * boid.h - Object props for location, velocity and acceleration. Constants to change behaviour and draw.
 
 ### The Mouser Source
 
-* Mouser.cpp - This object tracks with the mouse x/y location.
+* Mouser.cpp - A circular pointer that tracks the x/y location of the mouse.
 * Mouser.h - Object prop for location. Constants to change the way the mouse pointer is drawn.
 
 ### Main Line

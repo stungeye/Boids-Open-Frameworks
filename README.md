@@ -20,8 +20,8 @@ A C++ program written in the standard `setup/update/draw` [openFrameworks](https
 
 ### The Mouser Source
 
-* Mouser.cpp - A circular pointer that tracks the x/y location of the mouse.
-* Mouser.h - Object prop for location. Constants to change the way the mouse pointer is drawn.
+* [Mouser.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/Mouser.cpp) - A circular pointer that tracks the x/y location of the mouse.
+* [Mouser.h](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/Mouser.h) - Object prop for location. Constants to change the way the mouse pointer is drawn.
 
 ### Main Line
 

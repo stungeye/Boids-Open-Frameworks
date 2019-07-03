@@ -2,13 +2,13 @@
 
 Mouse seeking behavious modeled using location, velocity and acceleration. 
 
-Built with an intent to learn the [openFrameworks C++ creative coding toolkit](https://openframeworks.cc/).
+Built as a code Kata with an intent to learn the [openFrameworks C++ creative coding toolkit](https://openframeworks.cc/).
 
 ![SeekerBoid.exe Demo](seeker.gif)
 
-# Source Code
+## Source Code
 
-A C++ program written in the standard `setup/update/draw` [openFrameworks](https://openframeworks.cc/) style:
+A C++ program written in the `setup/update/draw` [openFrameworks](https://openframeworks.cc/) style:
 
 * [ofApp.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/ofApp.cpp) - The app setup along with its update/draw loop.
 * [ofApp.h](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/ofApp.h) - Two variables for the main app: `Boid theBoid` and `Mouser theMouse`
@@ -26,3 +26,9 @@ A C++ program written in the standard `setup/update/draw` [openFrameworks](https
 ### Main Line
 
 * [main.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/main.cpp) - The openFramework generated mainline.
+
+## Movement in Nature
+
+I'm using the word "Boid" here loosely. A [fully-fledged Boid](https://en.wikipedia.org/wiki/Boids) exhibits flocking behaviours in groups according to the Rules of Reynolds. 
+
+This is app includes a seeker Boid inspired by the [Autonomous Agents / Steering Behaviour Chapter](https://natureofcode.com/book/chapter-6-autonomous-agents/) in [Daniel Shiffman's book The Nature of Code](https://natureofcode.com). 

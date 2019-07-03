@@ -10,13 +10,13 @@ Built with an intent to learn the [openFrameworks C++ creative coding toolkit](h
 
 A C++ program written in the standard `setup/update/draw` [openFrameworks](https://openframeworks.cc/) style:
 
-* ofApp.cpp - The app setup along with its update/draw loop.
-* ofApp.h - Two variables for the main app: `Boid theBoid` and `Mouser theMouse`
+* [ofApp.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/ofApp.cpp) - The app setup along with its update/draw loop.
+* [ofApp.h](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/ofApp.h) - Two variables for the main app: `Boid theBoid` and `Mouser theMouse`
 
 ### The Boid Source
 
-* boid.cpp - Seeking behaviour and the code to draw the seeker as a circle with line nose: O- 
-* boid.h - Object props for location, velocity and acceleration. Constants to change behaviour and draw.
+* [boid.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/boid.cpp) - Seeking behaviour and the code to draw the seeker as a circle with line nose: O- 
+* [boid.h](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/boid.h) - Object props for location, velocity and acceleration. Constants to change behaviour and draw.
 
 ### The Mouser Source
 
@@ -25,4 +25,4 @@ A C++ program written in the standard `setup/update/draw` [openFrameworks](https
 
 ### Main Line
 
-* main.cpp - The openFramework generated mainline.
+* [main.cpp](https://github.com/stungeye/Seeker-Boid-with-openFrameworks/blob/master/openFrameworksApp11/src/main.cpp) - The openFramework generated mainline.

@@ -3,11 +3,13 @@
 #include "ofMain.h"
 #include "boid.h"
 #include "Mouser.h"
+#include <vector>
 
 class ofApp : public ofBaseApp{
+	const int NUMBER_OF_BOIDS = 100;
 
-	// One Boid (a Seeker) and a Mouser.
-	Boid theBoid;
+	// A vector of Boids and a Mouser.
+	std::vector<Boid> boids;
 	Mouser theMouse;
 
 	public:

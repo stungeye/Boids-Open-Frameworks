@@ -50,6 +50,6 @@ void Mouser::draw() {
 
 /* Public Getter - Mouse Location */
 
-ofVec2f Mouser::getLocation() {
+ofVec2f Mouser::getLocation() const {
 	return location;
 }

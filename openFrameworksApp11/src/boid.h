@@ -6,7 +6,7 @@
 class Boid
 {
 	/* Play with these constants to tweak the seeking. */
-	const float MAX_SPEED = 5;
+	const float MAX_SPEED = 7;
 	const float MAX_FORCE = 0.25;
 	const float SLOW_APPROACH_RADIUS = 100;
 

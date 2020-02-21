@@ -15,8 +15,9 @@ void ofApp::setup(){
 			ofRandomHeight(),
 			ofRandomWidth(),
 			ofColor::darkorange, // fill color
-			theMouse,            // the Mouser
-			boids				 // the boids vector
+			the_mouse,            // the Mouser
+			boids,				 // the boids vector
+			params
 		));
 	}
 }
@@ -24,7 +25,7 @@ void ofApp::setup(){
 //--UPDATE------------------------------------------------------------
 void ofApp::update(){
 	// Update the mouse and the boids.
-	theMouse.update();
+	the_mouse.update();
 	for (auto& boid : boids) {
 		boid.update();
 	}
@@ -33,8 +34,24 @@ void ofApp::update(){
 //--DRAW------------------------------------------------------------
 void ofApp::draw(){
 	// Draw the mouse and the boids.
-	theMouse.draw();
+	the_mouse.draw();
 	for (const auto& boid : boids) {
 		boid.draw();
+	}
+
+	if (show_gui) {
+		params.draw();
+	}
+}
+
+void ofApp::keyReleased(int key) {
+	if (key == 'g') {
+		show_gui = !show_gui;
+		
+		if (show_gui) {
+			ofShowCursor();
+		} else {
+			ofHideCursor();
+		}
 	}
 }

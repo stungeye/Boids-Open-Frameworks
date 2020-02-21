@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Mouser.h"
+#include "Parameters.h"
 #include <vector>
 
 class Boid
@@ -23,14 +24,15 @@ class Boid
 	std::vector<int> debug_boids;
 	const Mouser& mouse;
 	const std::vector<Boid>& boids;
+	Parameters& params;
 
 public:
-	Boid(float x, float y, ofColor color, const Mouser& m, const std::vector<Boid>& bs);
+	Boid(float x, float y, ofColor color, const Mouser& m, const std::vector<Boid>& bs, Parameters& p);
 	ofVec2f seek(ofVec2f targetLocation) const;
 	ofVec2f separate();
 	void update();
 	void draw() const;
-	ofVec2f getLocation() const;
+	ofVec2f get_location() const;
 private:
-	float headingInDegrees() const;
+	float heading_in_degrees() const;
 };

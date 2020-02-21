@@ -21,14 +21,14 @@ void Mouser::update() {
 void Mouser::draw(ofVec2f otherLocation)
 {
 	// How far is the other?
-	float distanceToOther = location.distance(otherLocation);
+	float distance_to_other = location.distance(otherLocation);
 
 	// Draw pseudo-stroke in black
 	ofSetColor(ofColor::black);  
 	ofDrawCircle(location.x, location.y, DRAW_RADIUS + DRAW_STROKE);
 
 	// The fill changes if other location is in our 2x radius hit zone.
-	if (distanceToOther <= DRAW_RADIUS * 2) {
+	if (distance_to_other <= DRAW_RADIUS * 2) {
 		ofSetColor(TOUCHING_COLOR);  
 	}
 	else {
@@ -50,6 +50,6 @@ void Mouser::draw() {
 
 /* Public Getter - Mouse Location */
 
-ofVec2f Mouser::getLocation() const {
+ofVec2f Mouser::get_location() const {
 	return location;
 }

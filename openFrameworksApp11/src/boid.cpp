@@ -5,8 +5,8 @@
  
   See boid.h for a Boid's private properties. */
 
-Boid::Boid(float x, float y, ofColor color, const Mouser& m, const std::vector<Boid>& bs):
-	mouse(m), boids(bs)
+Boid::Boid(float x, float y, ofColor color, const Mouser& m, const std::vector<Boid>& bs, Parameters& p):
+	mouse(m), boids(bs), params(p)
 {
 	location.set(x, y);
 	this->color = color;
@@ -21,8 +21,8 @@ Boid::Boid(float x, float y, ofColor color, const Mouser& m, const std::vector<B
 
 void Boid::update() {
 	// Accelerate! Apply the acceleration to the Boid's velocity.
-	velocity += separate();
-	velocity += seek(mouse.getLocation()) / 7;
+	velocity += separate() * params.get_separation_multiplier();
+	velocity += seek(mouse.get_location()) * params.get_mouse_seeking_multiplier();
 
 	// Limit Boid to a maximum speed.
 	velocity.limit(MAX_SPEED);
@@ -69,19 +69,19 @@ ofVec2f Boid::seek(ofVec2f targetLocation) const {
 }
 
 ofVec2f Boid::separate() {
-	debug_boids.clear();
-	
-	float desired_separation = DRAW_RADIUS * 5;
+	//debug_boids.clear();
+	float desired_separation = DRAW_RADIUS * params.get_separation_radius_multiplier();
 	ofVec2f sum_of_streering_vectors;
 
 	int count = 0;
 	int pos = 0;
 
 	for(auto boid : boids) {
-		ofVec2f line_between_boids = getLocation() - boid.getLocation();
+		ofVec2f line_between_boids = get_location() - boid.get_location();
 		float distance = line_between_boids.length();
+		
 		if ((distance > 0) && (distance < desired_separation)) {
-			debug_boids.push_back(pos);
+			//debug_boids.push_back(pos);
 			ofVec2f steering_unit_vector = line_between_boids.normalize();
 			ofVec2f steering_vector = steering_unit_vector / distance;
 			sum_of_streering_vectors += steering_vector;
@@ -119,7 +119,7 @@ void Boid::draw() const {
 	ofPushMatrix(); // Save the global coordinates
 
 	ofTranslate(location.x, location.y); // Translate coords to the boid's position
-	ofRotateZDeg(headingInDegrees()); // Rotate coordinate system to its heading
+	ofRotateZDeg(heading_in_degrees()); // Rotate coordinate system to its heading
 
 	ofSetLineWidth(DRAW_STROKE); // Set stroke witdh for lines
 	ofSetColor(ofColor::black); // Stroke is black
@@ -130,24 +130,25 @@ void Boid::draw() const {
 	ofDrawLine(0, 0, noseLength, 0); // Draw the "nose" stroke
 
 	ofPopMatrix(); // Pop the saved global coordinates
-
+	/*
 	ofSetLineWidth(1);
-	ofVec2f l = getLocation();
+	ofVec2f l = get_location();
 	for(auto boid_num : debug_boids) {
-		ofVec2f l2 = boids[boid_num].getLocation();
+		ofVec2f l2 = boids[boid_num].get_location();
 		ofDrawLine(l.x, l.y, l2.x, l2.y);
 	}
+	*/
 }
 
 /* Public Getter - Boid's Location */
 
-ofVec2f Boid::getLocation() const {
+ofVec2f Boid::get_location() const {
 	return location;
 }
 
 /* Private Helper - Boid's Heading in Degrees */
 
-float Boid::headingInDegrees() const {
+float Boid::heading_in_degrees() const {
 	// The angle between the xAxis and the boid's velocity is:	
 	ofVec2f xAxis(1, 0);
 	return xAxis.angle(velocity);

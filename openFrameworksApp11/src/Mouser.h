@@ -17,6 +17,6 @@ public:
 	void update();
 	void draw();
 	void draw(ofVec2f otherLocation);
-	ofVec2f getLocation() const;
+	ofVec2f get_location() const;
 };
 
